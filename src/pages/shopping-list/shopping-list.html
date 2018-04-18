@@ -7,23 +7,26 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Shopping list</ion-title>
+    <ion-title>Lista de compras</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="ToAddShoppingItem()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let item of shoppingList | async" (click)="selectShoppingItem(item)">
-      <h2>Item Name: {{ item.itemName }}</h2>
-      <h3>Item Number: {{ item.itemNumber }}</h3>
-    </ion-item>
-  </ion-list>
-
+  <ion-card>
+    <ion-card-header>
+        <h1>Productos</h1>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let item of shoppingList | async" (click)="selectShoppingItem(item)">
+        <h2>{{ item.itemName }}</h2>
+        <h3><b>{{ item.itemNumber }} unidades</b></h3>        
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>

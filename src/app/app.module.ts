@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
 import { AddShoppingItemPage } from '../pages/add-shopping-item/add-shopping-item';
+import { EditShoppingListPage } from '../pages/edit-shopping-list/edit-shopping-list';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore'
@@ -16,7 +17,8 @@ import { enviroment } from '../enviroments/enviroment';
   declarations: [
     MyApp,
     ShoppingListPage,
-    AddShoppingItemPage
+    AddShoppingItemPage,
+    EditShoppingListPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { enviroment } from '../enviroments/enviroment';
   entryComponents: [
     MyApp,
     ShoppingListPage,
-    AddShoppingItemPage
+    AddShoppingItemPage,
+    EditShoppingListPage
   ],
   providers: [
     StatusBar,
