@@ -24,10 +24,12 @@ export class AddShoppingItemPage {
   }
 
   addShoppingItem(shoppingItem: ShoppingItem) {
-    this.shoppingItemsCollection.add({
+    const id = this.afs.createId();
+    this.shoppingItemsCollection.doc(id).set({
+      itemId: id,
       itemName: shoppingItem.itemName,
       itemNumber: Number(shoppingItem.itemNumber),
-    });
+    })
     this.shoppingItem = {} as ShoppingItem;
     this.navCtrl.pop();
   }
