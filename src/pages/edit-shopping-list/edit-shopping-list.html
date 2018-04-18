@@ -6,28 +6,28 @@
 -->
 <ion-header>
 
-    <ion-navbar color="primary">
-      <ion-title>Editar producto</ion-title>
-    </ion-navbar>
+  <ion-navbar color="primary">
+    <ion-title>Editar producto</ion-title>
+  </ion-navbar>
+
+</ion-header>
   
-  </ion-header>
   
-  
-  <ion-content padding>
-  
-    <ion-list inset>
+<ion-content padding>
+
+  <ion-list inset>
+      <ion-item>
+          <ion-label stacked>Nombre del producto</ion-label>
+          <ion-input type="text" [(ngModel)]="shoppingItem.itemName"></ion-input>
+        </ion-item>
+      
         <ion-item>
-            <ion-label floating>Nombre del producto</ion-label>
-            <ion-input type="text" [(ngModel)]="shoppingItem.itemName"></ion-input>
-          </ion-item>
-        
-          <ion-item>
-              <ion-label floating>Cantidad</ion-label>
-              <ion-input type="number" [(ngModel)]="shoppingItem.itemNumber"></ion-input>
-          </ion-item>
-    </ion-list>
-    
-    <button ion-button block (click)="editShoppingItem(shoppingItem)">Editar</button>
+            <ion-label stacked>Cantidad</ion-label>
+            <ion-input type="number" [(ngModel)]="shoppingItem.itemNumber"></ion-input>
+        </ion-item>
+  </ion-list>
   
-  </ion-content>
+  <button ion-button block (click)="editShoppingItem(shoppingItem)">Editar</button>
+
+</ion-content>
   

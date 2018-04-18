@@ -2,5 +2,7 @@
   "name": "FirebaseCRUD",
   "app_id": "57df4a53",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

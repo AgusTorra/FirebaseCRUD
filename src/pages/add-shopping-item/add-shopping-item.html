@@ -15,14 +15,14 @@
 
 <ion-content padding>
 
-  <ion-list inset>
+  <ion-list>
       <ion-item>
-          <ion-label floating>Nombre del producto</ion-label>
-          <ion-input type="text" [(ngModel)]="shoppingItem.itemName"></ion-input>
+          <ion-label stacked>Nombre del producto</ion-label>
+          <ion-input #focusInput type="text" [(ngModel)]="shoppingItem.itemName"></ion-input>
         </ion-item>
       
         <ion-item>
-            <ion-label floating>Cantidad</ion-label>
+            <ion-label stacked>Cantidad</ion-label>
             <ion-input type="number" [(ngModel)]="shoppingItem.itemNumber"></ion-input>
         </ion-item>
   </ion-list>

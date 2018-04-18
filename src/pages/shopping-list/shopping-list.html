@@ -19,13 +19,13 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-card-header>
-        <h1>Productos</h1>
+    <ion-card-header>      
+      <h2>Productos</h2>
     </ion-card-header>
     <ion-list>
       <ion-item *ngFor="let item of shoppingList | async" (click)="selectShoppingItem(item)">
-        <h2>{{ item.itemName }}</h2>
-        <h3><b>{{ item.itemNumber }} unidades</b></h3>        
+        <h3>{{ item.itemName }}</h3>
+        <p id="nroUnidades"><b>{{ item.itemNumber }} unidades</b></p>        
       </ion-item>
     </ion-list>
   </ion-card>

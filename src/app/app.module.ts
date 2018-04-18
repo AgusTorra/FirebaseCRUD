@@ -12,6 +12,7 @@ import { EditShoppingListPage } from '../pages/edit-shopping-list/edit-shopping-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore'
 import { enviroment } from '../enviroments/enviroment';
+import { ToastService } from '../services/toast-service';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { enviroment } from '../enviroments/enviroment';
   providers: [
     StatusBar,
     SplashScreen,
+    ToastService,
     AngularFirestore,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

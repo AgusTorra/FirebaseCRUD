@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 import { ShoppingItem } from '../../models/shopping-item/shopping-item.interface';
 
@@ -19,7 +19,8 @@ export class EditShoppingListPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private afs: AngularFirestore) {
+              private afs: AngularFirestore,
+              public toastCtrl: ToastController) {
     this.shoppingItem = navParams.data;
     this.shoppingItemsCollection = this.afs.collection('shopping-list');
   }
@@ -30,8 +31,18 @@ export class EditShoppingListPage {
       itemName: shoppingItem.itemName,
       itemNumber: Number(shoppingItem.itemNumber),  
     });
+    this.presentToast(shoppingItem.itemName + " editado!" , 3000, 'bottom');
     this.shoppingItem = {} as ShoppingItem;
     this.navCtrl.pop();
+  }
+
+  presentToast(msg: string, time: number, pos: string) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: time,
+      position: pos
+    });
+    toast.present();
   }
 
 }
